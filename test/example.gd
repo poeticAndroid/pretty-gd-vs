@@ -10,6 +10,10 @@ class_name MyClass
 # Inheritance:
 extends BaseClass
 
+
+
+
+
 # Member variables.
 var a = 5
 var s = "Hello"

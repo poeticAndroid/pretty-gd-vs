@@ -3,7 +3,8 @@
 // The module 'vscode' contains the VS Code extensibility API
 // Import the module and reference it with the alias vscode in your code below
 import vscode from "./vscode.cjs"
-import pretty from "pretty-gd-js"
+import Pretty from "pretty-gd-js"
+const pretty = new Pretty()
 
 // this method is called when your extension is activated
 // your extension is activated the very first time the command is executed
@@ -28,12 +29,12 @@ class GdDocumentFormatter {
         }
 
         let options = vscode.window.activeTextEditor.options
-        pretty.indent = "\t"
-        pretty.tabSize = options.tabSize
+        pretty.indent_str = "\t"
+        pretty.tab_size = options.tabSize
         if (options.insertSpaces) {
-            pretty.indent = ""
-            for (let i = 0; i < options.indentSize; i++) {
-                pretty.indent += " "
+            pretty.indent_str = ""
+            for (let i = 0; i < options.indent_size; i++) {
+                pretty.indent_str += " "
             }
         }
         lines = pretty.prettify(lines) + "\n"
