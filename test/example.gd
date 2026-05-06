@@ -10,10 +10,6 @@ class_name MyClass
 # Inheritance:
 extends BaseClass
 
-
-
-
-
 # Member variables.
 var a = 5
 var s = "Hello"
@@ -267,6 +263,7 @@ func _ready() -> void:
 var lambda = func(x): print(x)
 lambda.call(42)  # Prints "42"
 
+
 var lambda = func my_lambda(x):
 	print(x)
 
@@ -275,6 +272,7 @@ var my_lambda = func(): print(x)
 my_lambda.call()  # Prints "42"
 x = "Hello"
 my_lambda.call()  # Prints "42"
+
 
 # Static functions
 static func sum2(a, b):
@@ -427,7 +425,7 @@ match x:
 		print("Empty array")
 	[1, 3, "test", null]:
 		print("Very specific array")
-	[ var start, _, "test"]:
+	[var start, _, "test"]:
 		print("First element is ", start, ", and the last is \"test\"")
 	[42, ..]:
 		print("Open ended array")
